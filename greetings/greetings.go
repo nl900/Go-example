@@ -10,10 +10,22 @@ import (
 // Capitalised, accessible to outside its package
 func Hello(name string) (string, error) {
 	if name == "" {
-		return "", errors.New("empty name")
+		return name, errors.New("empty name")
 	}
 	message := fmt.Sprintf(randomFormat(), name)
 	return message, nil
+}
+
+func Hellos(names []string) (map[string]string, error) {
+	messages := make(map[string]string)
+	for _, name := range names {
+		_, err := Hello(name)
+		if err != nil {
+			return nil, err
+		}
+		messages[name] = name
+	}
+	return messages, nil
 }
 
 func init() {
