@@ -20,7 +20,7 @@ func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
-func randomFormat() {
+func randomFormat() string {
 	formats := []string{
 		"hi, %v. Welcome!",
 		"Great to see you, %v!",
