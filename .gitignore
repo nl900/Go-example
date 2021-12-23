@@ -22,3 +22,5 @@ go.work
 !.vscode/tasks.json
 !.vscode/launch.json
 *.code-workspace
+
+.DS_Store
